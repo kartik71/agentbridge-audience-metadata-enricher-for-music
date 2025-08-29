@@ -1,0 +1,233 @@
+{
+  "id": "tpl-1883307514",
+  "name": "Audience Metadata Enricher for Music",
+  "description": "End-to-end agentic workflow to moderates edits, schedules rights DB, and drive accelerate post through Ad Server.",
+  "industry": "Media & Entertainment",
+  "pattern": "Reflection",
+  "complexity": "Expert",
+  "rating": 4.8,
+  "downloads": 39984,
+  "favorites": 2846,
+  "executionTime": "14min",
+  "tags": [
+    "localization",
+    "post",
+    "reflection",
+    "media"
+  ],
+  "steps": [
+    {
+      "id": "intake",
+      "name": "Footage Intake",
+      "description": "Collect and validate social metrics."
+    },
+    {
+      "id": "draft-0",
+      "name": "Draft",
+      "description": "Draft step aligned to Reflection pattern."
+    },
+    {
+      "id": "self-critique-1",
+      "name": "Self-Critique",
+      "description": "Self-Critique step aligned to Reflection pattern."
+    },
+    {
+      "id": "scheduling-0",
+      "name": "Scheduling",
+      "description": "Scheduling with guardrails and observability."
+    },
+    {
+      "id": "ranking-1",
+      "name": "Ranking",
+      "description": "Ranking with guardrails and observability."
+    },
+    {
+      "id": "compliance-2",
+      "name": "Compliance",
+      "description": "Compliance with guardrails and observability."
+    },
+    {
+      "id": "finalize",
+      "name": "Localization",
+      "description": "Finalize outputs and governance logging in CDN."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "intake",
+      "type": "agentbridge",
+      "data": {
+        "label": "Footage Intake",
+        "description": "Collect and validate social metrics.",
+        "nodeType": "input",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 60,
+        "y": 120
+      }
+    },
+    {
+      "id": "draft-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "Draft",
+        "description": "Draft step aligned to Reflection pattern.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 310,
+        "y": 120
+      }
+    },
+    {
+      "id": "self-critique-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "Self-Critique",
+        "description": "Self-Critique step aligned to Reflection pattern.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 560,
+        "y": 120
+      }
+    },
+    {
+      "id": "scheduling-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "Scheduling",
+        "description": "Scheduling with guardrails and observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 810,
+        "y": 120
+      }
+    },
+    {
+      "id": "ranking-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "Ranking",
+        "description": "Ranking with guardrails and observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1060,
+        "y": 120
+      }
+    },
+    {
+      "id": "compliance-2",
+      "type": "agentbridge",
+      "data": {
+        "label": "Compliance",
+        "description": "Compliance with guardrails and observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1310,
+        "y": 120
+      }
+    },
+    {
+      "id": "finalize",
+      "type": "agentbridge",
+      "data": {
+        "label": "Localization",
+        "description": "Finalize outputs and governance logging in CDN.",
+        "nodeType": "output",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1560,
+        "y": 120
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-0",
+      "source": "intake",
+      "target": "draft-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-1",
+      "source": "draft-0",
+      "target": "self-critique-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-2",
+      "source": "self-critique-1",
+      "target": "scheduling-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-3",
+      "source": "scheduling-0",
+      "target": "ranking-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-4",
+      "source": "ranking-1",
+      "target": "compliance-2",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-5",
+      "source": "compliance-2",
+      "target": "finalize",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    }
+  ],
+  "preview": "Footage Intake → Draft → Self-Critique → Scheduling → Ranking → Compliance → Localization",
+  "featured": false,
+  "createdAt": "2025-02-07T17:10:50.603Z",
+  "author": "AgentBridge Team",
+  "deployments": 4045,
+  "lastDeployed": "2025-08-20T05:34:14.021Z",
+  "configuration": {
+    "provider": "nvidia",
+    "region": "us-west-2",
+    "compute": "memory-optimized"
+  },
+  "healthStatus": "healthy",
+  "deploymentCount": 2023,
+  "githubRepo": "https://github.com/agentbridge/audience-metadata-enricher-for-music",
+  "maintainer": "AgentBridge Team"
+}
